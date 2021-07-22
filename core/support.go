@@ -13,7 +13,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-// Service limits check
+// Service limits check source: https://aws.amazon.com/premiumsupport/ta-iam/
 // Auto Scaling - Groups		fW7HH0l7J9
 // Auto Scaling - Launch Configurations		aW7HH0l7J9
 // CloudFormation - Stacks		gW7HH0l7J9
@@ -61,6 +61,13 @@ import (
 // VPC - Elastic IP Address		lN7RR0l7J9
 // VPC - Internet Gateways		kM7QQ0l7J9
 // VPC - Network Interfaces		jL7PP0l7J9
+//
+// resources contributed by Betsson
+// ELB - Application Load Balancers	EM8b3yLRTr
+// ELB - Network Load Balancers		8wIqYSt25K
+// Idle Load Balancers			hjLMh88uM8
+// Large Number of Rules in an EC2 Security Group	tfg86AVHAZ
+// 
 var (
 	checkIDs = []string{
 		"fW7HH0l7J9",
@@ -110,6 +117,10 @@ var (
 		"lN7RR0l7J9",
 		"kM7QQ0l7J9",
 		"jL7PP0l7J9",
+		"EM8b3yLRTr",
+		"8wIqYSt25K",
+		"hjLMh88uM8",
+		"tfg86AVHAZ",
 	}
 )
 
