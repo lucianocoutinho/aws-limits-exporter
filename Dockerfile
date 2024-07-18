@@ -1,5 +1,5 @@
 # build stage
-FROM golang:1.16-alpine AS build-env
+FROM golang:1.20-alpine AS build-env
 RUN apk add --no-cache --update alpine-sdk
 ENV REPO_PATH=/build
 COPY . $REPO_PATH
@@ -7,7 +7,7 @@ WORKDIR $REPO_PATH
 RUN make build
 
 # final stage
-FROM alpine
+FROM alpine:3.17
 LABEL maintainer="Daniel Martins <daniel.martins@jusbrasil.com.br>"
 WORKDIR /app
 COPY --from=build-env /build/bin/aws-limits-exporter /app/
